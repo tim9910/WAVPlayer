@@ -1,15 +1,15 @@
 # WAV 音效檔播放器
 
-## 概述
+## :pushpin: 概述
 **WAV 音效檔播放器** 是一個簡單的 **Windows Forms** 應用程式，用於播放和控制 .wav 格式的音效檔案。用戶可以選擇音效檔案並進行播放、重複播放、停止播放及結束程式等操作。
 
-## 開發環境
+## :pushpin: 開發環境
 
 - **語言**：C#
 - **IDE**：Visual Studio 2022
 - **平台**：Windows
 
-## 功能
+## :pushpin: 系統功能
 
 |      功能       |   圖示  |     功能說明           |
 |-----------------|---------|------------------------|
@@ -20,18 +20,18 @@
 |**結束程式**     | ![結束程式](https://github.com/tim9910/tim9910.github.io/blob/main/images/wavplayer/logout.png) |可選擇結束應用程式  |
 
 
-## UI畫面設計
+## :pushpin: UI畫面設計
 
   ![輸出](https://github.com/tim9910/tim9910.github.io/blob/main/images/wavplayer/ui.png)
 
-## 貼心輔助
+## :pushpin: 貼心輔助
 
   ![貼心輔助](https://github.com/tim9910/tim9910.github.io/blob/main/images/wavplayer/info2.gif)
 
-## 錯誤訊息提示機制
+## :pushpin: 錯誤訊息提示機制
 
   ![錯誤提示](https://github.com/tim9910/tim9910.github.io/blob/main/images/wavplayer/err.gif)
 
-## 系統操作畫面
+## :pushpin: 系統操作畫面
 
 　　![系統操作](https://github.com/tim9910/tim9910.github.io/blob/main/images/wavplayer/runapp.gif)

@@ -170,6 +170,7 @@
             this.Name = "frmWAVPlayer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WAV 音效檔播放器";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmWAVPlayer_FormClosing);
             this.Load += new System.EventHandler(this.frmWAVPlayer_Load);
             this.grpPath.ResumeLayout(false);
             this.grpPath.PerformLayout();

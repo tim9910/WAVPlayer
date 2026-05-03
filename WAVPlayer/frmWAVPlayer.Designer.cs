@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWAVPlayer));
             this.grpPath = new System.Windows.Forms.GroupBox();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.txtPath = new System.Windows.Forms.TextBox();
@@ -77,6 +78,7 @@
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(570, 31);
             this.txtPath.TabIndex = 0;
+            this.txtPath.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // grpButton
             // 
@@ -167,6 +169,7 @@
             this.ClientSize = new System.Drawing.Size(745, 285);
             this.Controls.Add(this.grpButton);
             this.Controls.Add(this.grpPath);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmWAVPlayer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WAV 音效檔播放器";

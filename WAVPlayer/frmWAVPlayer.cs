@@ -85,6 +85,17 @@ namespace WAVPlayer
             {
                 btnEnd.Image = ResizeImage(GetImage("logout"), new Size(44, 44));
             };
+
+            btnPlay.Enabled = false;
+            btnLoop.Enabled = false;
+            btnStop.Enabled = false;
+
+            //disabled 視窗的最大化和最小化按鈕，讓使用者只能關閉視窗
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            //disbled 視窗的調整大小功能，讓使用者無法改變視窗大小
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
         }
 
         private Image GetImage(string name)
@@ -120,6 +131,9 @@ namespace WAVPlayer
             if (ofdWAVFile.ShowDialog() == DialogResult.OK)
             {
                 txtPath.Text = ofdWAVFile.FileName;
+                btnPlay.Enabled = true;
+                btnLoop.Enabled = true;
+                //btnStop.Enabled = true;
             }
         }
 
@@ -132,7 +146,9 @@ namespace WAVPlayer
                 //player = new SoundPlayer();
                 player = new SoundPlayer(txtPath.Text);
                 player.Load();
+
                 player.Play();
+                btnStop.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -147,11 +163,12 @@ namespace WAVPlayer
             {
                 player = new SoundPlayer(txtPath.Text);
                 player.PlayLooping();
+                btnStop.Enabled = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("無法播放音效檔，請確認檔案路徑是否正確!\n" + ex.Message, "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+
             }
         }
 
@@ -165,6 +182,7 @@ namespace WAVPlayer
                 if (player != null)
                 {
                     player.Stop();
+                    btnStop.Enabled = false;
                 }
                 else
                 {
@@ -193,6 +211,28 @@ namespace WAVPlayer
             if (result == DialogResult.No)
             {
                 e.Cancel = true; // 取消關閉
+            }
+        }
+
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            string currentText = textBox.Text;
+            string controlName = textBox.Name;
+            if (controlName == "txtPath")
+            {
+                if (currentText == "")
+                {
+                    btnPlay.Enabled = false;
+                    btnLoop.Enabled = false;
+                    btnStop.Enabled = false;
+                }
+                else
+                {
+                    btnPlay.Enabled = true;
+                    btnLoop.Enabled = true;
+                    //btnStop.Enabled = true;
+                }
             }
         }
     }
